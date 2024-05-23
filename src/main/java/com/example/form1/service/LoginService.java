@@ -19,6 +19,9 @@ public class LoginService {
 		APIResponse apiResponse = new APIResponse();
 		
 		 User userEntity = new User();
+		 userEntity.setFirstname(signUpRequestDTO.getFirstname());
+	        userEntity.setLastname(signUpRequestDTO.getLastname());
+
 	        userEntity.setEmailId(signUpRequestDTO.getEmailId());
 	        userEntity.setPassword(signUpRequestDTO.getPassword());
 
