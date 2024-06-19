@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+import com.example.form1.common.AccessDeniedException;
 import com.example.form1.entity.User;
 
 import io.jsonwebtoken.Claims;
@@ -36,4 +37,15 @@ public class JwtUtils {
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
 }
+    public Claims verify(String authorization) throws Exception {
+
+        try {
+            Claims claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(authorization).getBody();
+            return claims;
+        } catch(Exception e) {
+            throw new AccessDeniedException("Access Denied");
+        }
+
+    }
+
 }
