@@ -8,6 +8,8 @@ import com.example.form1.entity.User;
 
 @Repository
 public interface UserRepository  extends JpaRepository<User, Long> {
-    User findOneByEmailIdIgnoreCaseAndPassword(String emailId, String password);
+
+	User findOneByEmailIdIgnoreCaseAndPassword(String emailId, String password);
+    //User findOneByEmailIdIgnoreCaseAndPassword(String emailId, String password);
 
 }

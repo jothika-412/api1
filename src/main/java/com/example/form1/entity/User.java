@@ -27,6 +27,12 @@ private String firstname;
 private String lastname;
 private String emailId;
 private String password;
+public User(String username, String encryptedPassword) {
+	// TODO Auto-generated constructor stub
+}
+public User() {
+	// TODO Auto-generated constructor stub
+}
 public String getEmailId() {
 	return emailId;
 }
